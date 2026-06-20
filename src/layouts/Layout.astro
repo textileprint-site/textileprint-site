@@ -1,0 +1,49 @@
+---
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title ?? "Textile Printing Armenia"}</title>
+  <meta name="description" content={description ?? "DTF, silk screen, custom printing in Yerevan, Armenia."} />
+
+  <!-- Canonical URL helps Google understand the main version of each page -->
+  <link rel="canonical" href="https://example.com{Astro.url?.pathname ?? ''}" />
+</head>
+
+<body>
+
+  <!--
+    NAVIGATION = PRIMARY SEO SIGNAL FOR SITE STRUCTURE
+    Google uses this to understand:
+    - main categories
+    - service relationships
+    - priority pages
+  -->
+  <nav style="padding: 10px 0;">
+    <a href="/en/">Home</a>
+    <a href="/en/services">Services</a>
+    <a href="/en/dtf-printing">DTF</a>
+    <a href="/en/silk-screen-printing">Silk Screen</a>
+    <a href="/en/t-shirt-printing">T-Shirts</a>
+    <a href="/en/workwear-printing">Workwear</a>
+    <a href="/en/portfolio">Portfolio</a>
+    <a href="/en/quote">Quote</a>
+
+    <span style="margin-left:20px;"></span>
+
+    <a href="/en/">EN</a>
+    <a href="/ru/">RU</a>
+    <a href="/hy/">HY</a>
+  </nav>
+
+  <hr />
+
+  <slot />
+
+</body>
+</html>
